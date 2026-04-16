@@ -16,17 +16,17 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install Backend
+      - name: Install Backend Dependencies
         run: |
-          cd backend
+          cd yummy_v7/yummy/backend
           npm install
 
-      - name: Install Frontend
+      - name: Install Frontend Dependencies
         run: |
-          cd frontend
+          cd yummy_v7/yummy/frontend
           npm install
 
-      - name: Build Frontend
+      - name: Build React App
         run: |
-          cd frontend
+          cd yummy_v7/yummy/frontend
           npm run build
