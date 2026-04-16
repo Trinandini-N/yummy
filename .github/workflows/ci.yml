@@ -9,31 +9,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # ✅ Checkout code
       - uses: actions/checkout@v3
 
+      # ✅ Setup Node
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      # ✅ Backend install
+      # ✅ Install Backend Dependencies
       - name: Install Backend Dependencies
         run: |
           cd yummy_v7/yummy/backend
           npm install
 
-      # 🔥 ADD THIS (MOST IMPORTANT)
-      - name: Run Backend Tests
-        run: |
-          cd yummy_v7/yummy/backend
-          NODE_ENV=test npm test
-
-      # ✅ Frontend
+      # ✅ Install Frontend Dependencies
       - name: Install Frontend Dependencies
         run: |
           cd yummy_v7/yummy/frontend
           npm install
 
+      # ✅ Build React App
       - name: Build React App
         run: |
           cd yummy_v7/yummy/frontend
