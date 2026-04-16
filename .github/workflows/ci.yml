@@ -12,6 +12,27 @@ jobs:
       # ✅ Checkout code
       - uses: actions/checkout@v3
 
+      # 🔍 Show root repository files
+      - name: Show Root Repository
+        run: |
+          echo "Root directory:"
+          pwd
+          ls -la
+
+      # 🔍 Show full project structure
+      - name: Show Project Structure
+        run: |
+          echo "Project structure:"
+          ls -R
+
+      # 🔍 Show your specific folders
+      - name: Show Backend & Frontend Folders
+        run: |
+          echo "Backend:"
+          ls -la yummy_v7/yummy/backend
+          echo "Frontend:"
+          ls -la yummy_v7/yummy/frontend
+
       # ✅ Setup Node
       - name: Setup Node
         uses: actions/setup-node@v3
