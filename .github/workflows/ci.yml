@@ -22,7 +22,7 @@ jobs:
           cd yummy_v7/yummy/backend
           npm install
 
-      # 🔥 ADD THIS (MOST IMPORTANT)
+      # 🔥 ADD THIS (THIS IS WHAT YOU NEED)
       - name: Run Backend Tests
         run: |
           cd yummy_v7/yummy/backend
