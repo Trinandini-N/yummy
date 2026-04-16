@@ -11,17 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # 🔍 SHOW REPO (root)
-      - name: Show Repository Root
-        run: |
-          pwd
-          ls -la
-
-      # 🔍 SHOW PROJECT STRUCTURE
-      - name: Show Project Structure
-        run: |
-          ls -R yummy_v7
-
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
@@ -31,20 +20,18 @@ jobs:
       - name: Install Backend Dependencies
         run: |
           cd yummy_v7/yummy/backend
-          ls -la   # 🔍 confirm backend files
           npm install
 
-      # 🔥 Run tests
+      # 🔥 ADD THIS (THIS IS WHAT YOU NEED)
       - name: Run Backend Tests
         run: |
           cd yummy_v7/yummy/backend
-          npm test
+          NODE_ENV=test npm test
 
       # ✅ Frontend
       - name: Install Frontend Dependencies
         run: |
           cd yummy_v7/yummy/frontend
-          ls -la   # 🔍 confirm frontend files
           npm install
 
       - name: Build React App
